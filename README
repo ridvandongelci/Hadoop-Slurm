@@ -1,0 +1,11 @@
+TO RUN HADOOP 2.2.0 ON A SLURM BASED SYSTEM
+PERFORM THE FOLLOWING STEPS
+1. DOWNLOAD HADOOP (wget http://MIRROR-NAME/pub/apache/hadoop/common/hadoop-X.Y.Z/hadoop-X.Y.Z.tar.gz)
+2. UNZIP HADOOP (tar -xvf hadoop-X.Y.Z.tar.gz)
+3. ADD $HADOOP_HOME $PIG_HOME $JAVA_HOME TO YOUR .bashrc (see .bashrc file in this repository)
+4. SOURCE .bashrc (source ~/.bashrc)
+5. REMOVE HADOOP CONFIGURATION FILES (rm -rf $HADOOP_HOME/etc/hadoop)
+6. COPY TEMPLATE CONFIGS TO $HADOOP_HOME/etc (cp template_hadoop $HADOOP_HOME/etc)
+7. RUN hadoopslurm.sh SCRIPT WITH WORKING DIRECTORY (sbatch hadoopslurm test)
+
+AFTER THIS STEPS SLURM SHOULD RUN HADOOP WORDCOUNT EXAMPLE 
